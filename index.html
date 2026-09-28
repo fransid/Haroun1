@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Évaluation d'entrée en CE1 – Exercice de Sid KHALIFA</title>
+<style>
+:root{--moutarde:#e1a800;--moutarde-f:#b98300;--jaune:#ffe066;--creme:#fff8d6;--encre:#3a2a00;--vert:#2e9e4f;--rouge:#d63a3a;--bleu:#1f3b78}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Trebuchet MS","Comic Sans MS",Verdana,sans-serif;color:var(--encre);line-height:1.5;
+ background:radial-gradient(circle at 15% 10%,#fff09a 0,transparent 40%),radial-gradient(circle at 90% 60%,#f0bd1c 0,transparent 45%),linear-gradient(160deg,#ffe066,#eab308);background-attachment:fixed;min-height:100vh}
+.wrap{max-width:820px;margin:0 auto;padding:18px 14px 60px}
+header{background:#fff;border:4px solid var(--moutarde-f);border-radius:26px;padding:20px;text-align:center;box-shadow:0 6px 0 var(--moutarde-f)}
+header img{display:block;margin:0 auto 10px;width:155px;max-width:100%;height:auto}
+h1{margin:6px 0;font-size:1.7rem;color:var(--bleu)}
+.auteur{display:inline-block;background:var(--moutarde);color:#fff;font-weight:bold;padding:5px 16px;border-radius:20px;margin:4px 0 10px;text-shadow:0 1px 0 #7a5600}
+header p{margin:6px 0;font-size:.98rem}
+.nom{margin-top:10px}.nom input{font:inherit;padding:8px 12px;border:3px solid var(--moutarde);border-radius:12px;width:min(320px,90%);background:var(--creme)}
+.barre{position:sticky;top:0;z-index:5;margin:14px 0;background:var(--creme);border:3px solid var(--moutarde-f);border-radius:16px;padding:8px 14px;display:flex;gap:12px;align-items:center;font-weight:bold}
+.piste{flex:1;height:14px;background:#f3dd8a;border-radius:10px;overflow:hidden;border:2px solid var(--moutarde-f)}
+#prog{height:100%;width:0;background:var(--vert);transition:width .3s}
+section{background:var(--creme);border:4px solid var(--moutarde-f);border-radius:22px;padding:14px 16px 6px;margin:18px 0}
+section>h2{margin:0 0 6px;color:var(--bleu);font-size:1.3rem}
+.intro{background:#fff;border-left:8px solid var(--moutarde);border-radius:12px;padding:10px 14px;margin:8px 0 12px;font-size:1.1rem}
+.q{background:#fff;border:2px solid #f1d36b;border-radius:16px;padding:12px 14px;margin:12px 0}
+.q p{margin:0 0 8px;font-weight:bold;font-size:1.05rem}
+.q .n{display:inline-block;min-width:32px;text-align:center;background:var(--bleu);color:#fff;border-radius:50%;padding:1px 6px;margin-right:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font:inherit;font-size:1.05rem;cursor:pointer;background:var(--creme);color:var(--encre);border:3px solid var(--moutarde);border-radius:12px;padding:8px 16px;transition:transform .1s}
+.opt:hover:not(:disabled){transform:scale(1.05);background:#ffeb99}
+.opt:focus-visible,.btn:focus-visible{outline:4px solid var(--bleu);outline-offset:2px}
+.opt.ok{background:var(--vert);border-color:#1b6d34;color:#fff}
+.opt.ko{background:var(--rouge);border-color:#9c2222;color:#fff}
+.opt:disabled{cursor:default}
+.exp{display:none;margin-top:8px;padding:8px 12px;background:#e9f8ee;border-left:6px solid var(--vert);border-radius:8px;font-size:.95rem}
+.corrige .exp{display:block}
+#resultat{display:none;text-align:center;background:#fff;border:4px solid var(--vert);border-radius:22px;padding:16px;margin:18px 0;font-size:1.2rem}
+#resultat strong{font-size:2rem;color:var(--vert)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
+.btn{font:inherit;font-weight:bold;font-size:1.05rem;cursor:pointer;border:3px solid #7a5600;border-radius:16px;padding:12px 22px;background:var(--bleu);color:#fff;box-shadow:0 4px 0 #7a5600}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #7a5600}
+.btn.c{background:var(--vert)}.btn.r{background:#fff;color:var(--encre)}
+footer{text-align:center;margin-top:24px;font-size:.9rem}
+@media(max-width:520px){h1{font-size:1.35rem}.opt{flex:1 1 40%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{.actions,.barre{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <img src="data:image/jpeg;base64,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" alt="Logo Fransid – cours de français" width="155" height="152">
+ <h1>Évaluation d'entrée en CE1</h1>
+ <div class="auteur">Exercice de Sid KHALIFA</div>
+ <p>30 questions : mathématiques, lecture, repérage de mots et nature des mots (programme de fin de CP).</p>
+ <p>Clique sur la bonne réponse : elle devient <b style="color:var(--vert)">verte</b> si tu as juste, <b style="color:var(--rouge)">rouge</b> si tu t'es trompé.</p>
+ <div class="nom"><input id="prenom" placeholder="Écris ton prénom ici" aria-label="Prénom de l'élève"></div>
+</header>
+
+<div class="barre"><span id="score">Score : 0 / 30</span><div class="piste"><div id="prog"></div></div><span id="rep">0/30</span></div>
+
+<div id="quiz"></div>
+
+<div id="resultat" aria-live="polite"></div>
+
+<div class="actions">
+ <button class="btn c" id="bCorrige">📖 Corrigé avec explications</button>
+ <button class="btn" id="bDl">⬇️ Télécharger l'évaluation</button>
+ <button class="btn r" id="bRaz">🔄 Recommencer</button>
+</div>
+<footer>Exercice de Sid KHALIFA – Fransid, cours de français</footer>
+</div>
+
+<script>
+const S=[
+{t:"🔢 Mathématiques – Nombres et calcul",q:[
+["Combien font 7 + 5 ?",["11","12","13"],1,"7 + 5 = 12. On peut faire 7 + 3 = 10, puis 10 + 2 = 12."],
+["Combien font 15 − 6 ?",["8","9","10"],1,"15 − 6 = 9. On enlève 5 pour aller à 10, puis encore 1 : 10 − 1 = 9."],
+["Quel nombre vient juste après 39 ?",["38","40","49"],1,"Après 39 vient 40 : on passe à la dizaine suivante."],
+["Dans le nombre 34, combien y a-t-il de dizaines ?",["3","4","34"],0,"34 = 3 dizaines et 4 unités."],
+["Quel est le double de 6 ?",["8","12","66"],1,"Le double, c'est 6 + 6 = 12."],
+["Quel est le bon signe : 45 … 54 ?",["<",">","="],0,"45 est plus petit que 54, donc 45 < 54."],
+["Quelle est la moitié de 10 ?",["2","5","20"],1,"La moitié, c'est partager en 2 parts égales : 5 + 5 = 10."],
+["Complète : 5, 10, 15, … ?",["16","20","25"],1,"On avance de 5 en 5 : 15 + 5 = 20."],
+["Combien d'unités y a-t-il dans le nombre 58 ?",["5","8","58"],1,"58 = 5 dizaines et 8 unités."]]},
+{t:"🧮 Mathématiques – Problèmes, géométrie, mesures",q:[
+["Léa a 8 billes. Elle en gagne 5. Combien a-t-elle de billes ?",["3","12","13"],2,"Elle en gagne : on ajoute. 8 + 5 = 13."],
+["Tom a 14 bonbons. Il en mange 6. Combien lui en reste-t-il ?",["8","9","20"],0,"Il en mange : on enlève. 14 − 6 = 8."],
+["Quelle figure a 4 côtés égaux et 4 angles droits ?",["Le triangle","Le carré","Le rond"],1,"Le carré a 4 côtés de même longueur et 4 angles droits."],
+["Combien y a-t-il de jours dans une semaine ?",["5","6","7"],2,"Lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche : 7 jours."],
+["Avec quel outil mesure-t-on la longueur de ta trousse ?",["Une règle","Une balance","Un verre"],0,"La règle, graduée en centimètres, sert à mesurer une longueur."]]},
+{t:"📚 Lecture et compréhension",intro:"<b>Lis le texte :</b><br>Le petit chat de Mila s'appelle Filou. Il aime dormir sur le canapé rouge et jouer avec une pelote de laine. Le soir, il boit son lait.",q:[
+["Comment s'appelle le chat de Mila ?",["Filou","Milou","Minou"],0,"Le texte dit : « Le petit chat de Mila s'appelle Filou »."],
+["Où aime-t-il dormir ?",["Dans un panier","Sur le canapé rouge","Sur le lit"],1,"Il aime dormir sur le canapé rouge."],
+["Avec quoi joue-t-il ?",["Une balle","Une souris","Une pelote de laine"],2,"Il joue avec une pelote de laine."],
+["Que boit-il le soir ?",["Du lait","De l'eau","Du jus"],0,"Le soir, il boit son lait."],
+["Quel mot rime avec « chapeau » ?",["bateau","chat","maison"],0,"« chapeau » et « bateau » finissent par le même son [o]."],
+["Combien y a-t-il de syllabes dans « banane » ?",["2","3","4"],1,"Ba-na-ne : on frappe 3 fois dans les mains."]]},
+{t:"🔎 Repérage de mots et de sons",q:[
+["Quel mot commence par le son [ch] ?",["table","chat","sac"],1,"« chat » commence par « ch » : [ch]."],
+["Combien y a-t-il de mots dans la phrase : « Le chat dort. » ?",["2","3","4"],1,"Le / chat / dort : 3 mots."],
+["Quel mot est bien écrit ?",["maizon","maisson","maison"],2,"On écrit « maison » avec un seul « s » et un « s » qui fait [z]."],
+["Quel mot vient en premier dans l'ordre alphabétique ?",["ballon","avion","cerise"],1,"L'ordre : a, b, c… « avion » (a) vient avant « ballon » (b) et « cerise » (c)."],
+["Quelle phrase est bien écrite ?",["le chien mange un os","Le chien mange un os.","Le chien mange un os"],1,"Une phrase commence par une majuscule et finit par un point."]]},
+{t:"🧩 Nature des mots",q:[
+["Dans « Le chien court », quel mot est un nom ?",["Le","chien","court"],1,"Un nom désigne un être ou une chose : le chien."],
+["Dans « Tom mange une pomme », quel mot est un verbe ?",["Tom","mange","pomme"],1,"Le verbe dit ce que l'on fait : Tom mange."],
+["Dans « Une jolie fleur », quel mot est un adjectif ?",["Une","jolie","fleur"],1,"L'adjectif dit comment est la fleur : jolie."],
+["Quel mot est un verbe ?",["sauter","table","rouge"],0,"On peut dire « je saute » : c'est un verbe."],
+["Écris au pluriel : un chat → des …",["chat","chats","chate"],1,"Au pluriel, on ajoute un « s » : des chats."]]}
+];
+const TOTAL=30;let ok=0,rep=0;
+const quiz=document.getElementById("quiz");
+function build(){
+ quiz.innerHTML="";ok=0;rep=0;let n=0;
+ quiz.classList.remove("corrige");
+ S.forEach(sec=>{
+  const s=document.createElement("section");
+  s.innerHTML="<h2>"+sec.t+"</h2>"+(sec.intro?'<div class="intro">'+sec.intro+"</div>":"");
+  sec.q.forEach(it=>{
+   n++;const i=n;
+   const d=document.createElement("div");d.className="q";
+   d.innerHTML='<p><span class="n">'+i+"</span>"+it[0]+'</p><div class="opts"></div><div class="exp"><b>Explication :</b> '+it[3]+"</div>";
+   const o=d.querySelector(".opts");
+   it[1].forEach((t,k)=>{
+    const b=document.createElement("button");b.className="opt";b.textContent=t;b.type="button";
+    b.onclick=()=>answer(d,k,it[2]);o.appendChild(b);
+   });
+   s.appendChild(d);
+  });
+  quiz.appendChild(s);
+ });
+ majBarre();
+ const r=document.getElementById("resultat");r.style.display="none";
+}
+function answer(d,k,c){
+ if(d.dataset.done)return;
+ d.dataset.done="1";rep++;
+ const b=d.querySelectorAll(".opt");
+ b.forEach(x=>x.disabled=true);
+ if(k===c){ok++;b[k].classList.add("ok")}
+ else{b[k].classList.add("ko");b[c].classList.add("ok")}
+ majBarre();
+ if(rep===TOTAL)finir();
+}
+function majBarre(){
+ document.getElementById("score").textContent="Score : "+ok+" / "+TOTAL;
+ document.getElementById("rep").textContent=rep+"/"+TOTAL;
+ document.getElementById("prog").style.width=(rep/TOTAL*100)+"%";
+}
+function finir(){
+ const p=document.getElementById("prenom").value.trim();
+ let m=ok>=25?"🌟 Excellent ! Tu es prêt(e) pour le CE1 !":ok>=18?"👍 Très bien ! Encore un peu d'entraînement.":ok>=12?"🙂 C'est un bon début. Relis le corrigé pour progresser.":"💪 Courage ! Refais l'exercice avec le corrigé, tu vas y arriver.";
+ const r=document.getElementById("resultat");
+ r.innerHTML=(p?"Bravo "+p.replace(/[<>&]/g,"")+" !<br>":"")+"Ton score : <strong>"+ok+" / "+TOTAL+"</strong><br>"+m;
+ r.style.display="block";r.scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.getElementById("bCorrige").onclick=()=>{
+ quiz.classList.add("corrige");
+ quiz.querySelectorAll(".q").forEach(d=>{
+  const b=d.querySelectorAll(".opt");
+  if(!d.dataset.done){b.forEach(x=>x.disabled=true);}
+ });
+ // met en vert la bonne réponse des questions non traitées
+ let idx=0;
+ S.forEach(sec=>sec.q.forEach(it=>{
+  const d=quiz.querySelectorAll(".q")[idx++];
+  if(!d.dataset.done)d.querySelectorAll(".opt")[it[2]].classList.add("ok");
+ }));
+ quiz.scrollIntoView({behavior:"smooth"});
+};
+document.getElementById("bRaz").onclick=()=>{build();window.scrollTo({top:0,behavior:"smooth"})};
+document.getElementById("bDl").onclick=()=>{
+ const c=document.documentElement.cloneNode(true);
+ c.querySelector("#quiz").innerHTML="";
+ const r=c.querySelector("#resultat");r.innerHTML="";r.removeAttribute("style");
+ c.querySelector("#prenom").removeAttribute("value");
+ const html="<!DOCTYPE html>\n"+c.outerHTML;
+ const a=document.createElement("a");
+ a.href=URL.createObjectURL(new Blob([html],{type:"text/html;charset=utf-8"}));
+ a.download="evaluation-entree-CE1-Sid-KHALIFA.html";
+ document.body.appendChild(a);a.click();a.remove();
+};
+build();
+</script>
+</body>
+</html>
